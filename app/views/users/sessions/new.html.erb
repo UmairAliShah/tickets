@@ -1,0 +1,50 @@
+<% content_for :title, "User Log-In | " %>
+<div class="container" style="padding-top: 20px;">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 no-pad-xs">
+      <div class="row login_signup_heading" style="padding:0px;margin:0px;">
+        <div class="col-md-12">
+          <center><h3 class="heading_text">Log-In</h3></center>
+        </div>
+      </div>
+      <div class="jumbotron" style="padding-top:1em;padding-bottom:1em; background-color: rgba(48,110,255,0.7); border-radius:0 0 1em 1em;">
+        <div class="row">
+           <div class="col-md-1"></div>
+           <div class="col-md-10 login_signup_panel">
+             <br>
+             <div class="row">
+               <div class="col-md-12">
+                 <center>
+                   <!--<%= image_tag("logo_128.png", class: "img-responsive img-circle", alt: "Info Fiji", style: "width: 120px; height: 120px;") %>
+                 --></center>
+               </div>
+             </div>
+             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+               <div class="form-group" style="padding:0px;margin:0px;">
+                 <%= f.label :email, class: "login_signup_label"  %><br />
+                 <%= f.email_field :email, autofocus: true, placeholder: 'Your Email', class: 'form-control my_text_field', required: true %>
+               </div>
+               <div class="form-group" style="padding:0xp;margin:0px;">
+                 <%= f.label :password, class: "login_signup_label" %><br />
+                 <%= f.password_field :password, autocomplete: "off", placeholder: 'Your Password', class: 'form-control my_text_field', required: true %>
+               </div>
+               <% if devise_mapping.rememberable? -%>
+                 <div class="form-group" style="padding:0px;margin:0px 15px 15px 0px;">
+                   <%= f.check_box :remember_me, {:class => ""} %>
+                   <%= f.label :remember_me, class: "remember_label", style:"font-size:0.9em;" %>
+                 </div>
+               <% end -%>
+               <div class="form-group">
+                 <%= f.submit "Log in",class: 'btn btn-block btn-primary active_button', style: "font-weight:bold;font-family: 'Merriweather', serif;  color:#FFFFFF"  %>
+               </div>
+             <% end %>
+             <%= render "users/shared/links" %>
+           </div>
+           <div class="col-md-1"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

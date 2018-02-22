@@ -1,0 +1,39 @@
+<div class="container-fluid navbar-fixed-top" style="background: rgba(0,0,0,0.8);">
+   <div class="row my_nav_bar_row">
+     <nav class="navbar navbar">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <button class="navbar-toggle" data-target="#mainNavCollapse" data-toggle="collapse" type="button">
+             <span class="glyphicon glyphicon-th-list" style="font-size:2em;"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="mainNavCollapse">
+            <ul class="nav navbar-nav" style="font-size:1em;font-weight:bold;font-family: 'Merriweather', serif;cursor: default;">
+              <li><a onclick="moveContact(this)" id="navBody">Dashboard</a></li>
+              <li><a onclick="moveContact(this)" id="navBody">Dashboard</a></li>
+              <li><a onclick="moveContact(this)" id="navBody">Dashboard</a></li>
+              <li class="dropdown">
+              </li>
+              <% if admin_signed_in? %>
+                 <%= link_to("Logout",  destroy_admin_session_path, method: :delete, class: "btn btn-outline btn-primary btn-sm signup") %>
+              <%else %>
+                 <li><%= link_to("Login", new_admin_session_path) %></li>
+               <%end%>
+           </ul>
+          </div>
+       </div>
+     </nav>
+   </div>
+</div>
+<div class="container-fluid" style="padding-top:6em;">
+  <% if notice %>
+        <div id="notice_wrapper" class="my_notice">
+          <center><p class="app_notice"><%= notice %></p></center>
+        </div>
+ <%elsif alert %>
+        <div id="notice_wrapper" class="my_alert">
+          <center><p class="app_alert"><%= alert %></p></center>
+        </div>
+  <% end %>
+  <div class="row" style="margin:0px;padding:0px;"><%= yield %></div>
+</div>

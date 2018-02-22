@@ -1,0 +1,162 @@
+<body id="body">
+	<div class="row" style="margin:0px;padding:0px;">
+		<!--Fixed Navigation==================================== -->
+		<header id="navigation" class="navbar-fixed-top navbar" style="background:rgba(41,128,185,0.8);padding:1em;">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <!-- responsive nav button -->
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main_bar" style="font-size:2em;">
+		        <i class="glyphicon glyphicon-th-list"></i>
+		      </button>
+		      <!-- /responsive nav button -->
+		      <!-- logo -->
+		      <a class="navbar-brand my_logo" style="margin-left:0px;margin-right:0px;padding-left:0xp;padding-right:0px;">
+		        <h1 id="logo" style="margin-top:-8px;" class="header_logo">
+		          <!-- <%= image_tag("logo_128.png", alt: "Info Fiji", style: "width: 70px; height: 70px;") %> -->
+		        </h1>
+		      </a>
+		      <!-- /logo -->
+		    </div>
+		    <!-- main nav -->
+		    <nav class="collapse navbar-collapse navbar-right" role="navigation" id="main_bar">
+		      <ul id="nav" class="nav navbar-nav">
+		        <% if controller.controller_name == "homes" && controller.action_name == "index" %>
+		          <li><a onclick="moveContact(this)" id="navBody">Home</a></li>
+		          <li><a onclick="moveContact(this)" id="navFeatures">Features</a></li>
+		          <li><a onclick="moveContact(this)" id="navFacts">Facts</a></li>
+		        <% else %>
+		          <li><%= link_to("Home",  root_path) %></li>
+		        <% end %>
+						<li id="contactli"><a onclick="moveContact(this)" id="navContact">Contact Us</a></li>
+		        <li><a onclick="moveContact(this)" id="navBody">Products</a></li>
+		        <li><a onclick="moveContact(this)" id="navBody">Electronice</a></li>
+		        <li><a onclick="moveContact(this)" id="navBody">Houseware</a></li>
+						<% if user_signed_in? %>
+                 <li><%= link_to("Logout",  destroy_user_session_path, method: :delete) %></li>
+						<%else %>
+							 <li><%= link_to("Sign Up",  new_user_registration_path) %></li>
+							 <li><%= link_to("Login", new_user_session_path) %></li>
+						<%end%>
+						<li>
+							<%= form_for :home, url: search_homes_path, :html => { class:"navbar-form", style:"max-width:85%" } do |f|%>
+								<div class="form-group" style="display:inline;">
+									<div class="input-group">
+										<%= f.text_field :search, class:"form-control", placeholder:"Search..."   %>
+										<span class="input-group-addon">
+											<%= button_tag(type: "submit", style:"display:none;") do %>
+												<!-- <span class="glyphicon glyphicon-search"></span> -->
+											<% end %>
+											<span class="glyphicon glyphicon-search"></span>
+										</span>
+									</div>
+								</div>
+							<% end %>
+						</li>
+		      </ul>
+		    </nav>
+		    <!-- /main nav -->
+		  </div>
+		</header>
+		<!--End Fixed Navigation==================================== -->
+		<% if controller.controller_name == "homes" && controller.action_name == "index" %>
+			<div class="row" style="z-index:9999;position:fixed;width:100%;padding:0px;margin:0px;margin-top:6em;">
+
+				<% if notice %>
+					<div id="notice_wrapper" class="my_notice">
+						<center><p class="app_notice"><%= notice %></p></center>
+					</div>
+				<%elsif alert %>
+					<div id="notice_wrapper" class="my_alert">
+						<center><p class="app_alert"><%= alert %></p></center>
+					</div>
+				<% end %>
+			</div>
+		<%else%>
+			<div class="main_bg container-fluid" style="margin:0px;padding:0px;padding-top:6em;">
+		  <% if notice %>
+		        <div id="notice_wrapper" class="my_notice">
+		          <center><p class="app_notice"><%= notice %></p></center>
+		        </div>
+		 <%elsif alert %>
+		        <div id="notice_wrapper" class="my_alert">
+		          <center><p class="app_alert"><%= alert %></p></center>
+		        </div>
+		  <% end %>
+		<%end%>
+
+		<%= yield %>
+
+			<!--Contact Us==================================== -->
+			<section id="contact" class="contact" style="background:#FFFFFF;">
+				<div class="container">
+					<div class="row mb50">
+						<div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
+							<h2>Let’s Discuss</h2>
+							<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+						</div>
+						<div class="sec-sub-title text-center wow rubberBand animated" data-wow-duration="1000ms">
+							<p>We need YOUR suggestions to serve YOU with the best quality and authenticated information.</p>
+						</div>
+						<!-- contact address -->
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
+							<div class="contact-address">
+								<h3>!!In-Fiji!!By Fiji!!For Fijiians!!</h3>
+								<p>Unified Solutions</p>
+								<p>Contact: 9386920	</p>
+							</div>
+						</div>
+						<!-- end contact address -->
+						<!-- contact form -->
+						<div class="col-lg-8 col-md-8 col-sm-4 col-xs-12 wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="300ms">
+							<div class="contact-form">
+								<h3>Say hello!</h3>
+								<form action="#" id="contact-form">
+									<div class="input-group name-email">
+										<div class="input-field">
+											<input type="text" name="name" id="name" placeholder="Name" class="form-control">
+										</div>
+										<div class="input-field">
+											<input type="email" name="email" id="email" placeholder="Email" class="form-control">
+										</div>
+									</div>
+									<div class="input-group">
+										<textarea name="message" id="message" placeholder="Message" class="form-control"></textarea>
+									</div>
+									<div class="input-group">
+										<input type="submit" id="form-submit" class="pull-right" value="Send message">
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- end contact form -->
+					</div>
+				</div>
+			</section>
+			<!--End Contact Us==================================== -->
+
+			<footer id="footer" class="footer" style="background:#2E86C1;">
+			  <div class="container" style="background:#2E86C1;">
+			    <div class="row">
+			      <div class="col-md-12">
+			        <p class="copyright text-center">
+								<a href="\">Disclaimer, Terms and Conditions of use Privacy & Cookies Policy Copyrigh Policy © 2018</a>
+			        </p>
+			      </div>
+			    </div>
+			  </div>
+			</footer>
+		</div>
+		<a href="javascript:void(0);" id="back-top" class="header_logo" style="color:#2874A6;font-size:2.5em;"><i class="glyphicon glyphicon-upload"></i></a>
+		<script>
+			var wow = new WOW ({
+				boxClass:     'wow',      // animated element css class (default is wow)
+				animateClass: 'animated', // animation css class (default is animated)
+				offset:       120,          // distance to the element when triggering the animation (default is 0)
+				mobile:       false,       // trigger animations on mobile devices (default is true)
+				live:         true        // act on asynchronously loaded content (default is true)
+			  }
+			);
+			wow.init();
+		</script>
+	</div>
+</body>
