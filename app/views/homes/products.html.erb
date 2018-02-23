@@ -1,0 +1,268 @@
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); }
+</script>
+<script>
+   new WOW().init();
+</script>
+<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+</script>
+<script type="text/javascript">
+  $(window).load(function(){
+    $('.flexslider').flexslider({
+    animation: "pagination",
+    start: function(slider){
+      $('body').removeClass('loading');
+    }
+    });
+  });
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    var defaults = {
+      containerID: 'toTop', // fading element id
+      containerHoverID: 'toTopHover', // fading element hover id
+      scrollSpeed: 1200,
+      easingType: 'linear'
+    };
+
+    $().UItoTop({ easingType: 'easeOutQuart' });
+
+  });
+</script>
+
+
+<!--gallery-->
+<div class="gallery">
+  <div class="container">
+    <div class="title-info wow fadeInUp animated" data-wow-delay=".5s">
+      <h3 class="title">Popular<span> Products</span></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit curabitur </p>
+    </div>
+    <div class="gallery-info">
+      <div class="row responsive">
+        <div class="col-md-4 col-xs-12 gallery-grid wow flipInY animated" data-wow-delay=".5s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Baby Girls' Dress </a></h5>
+            <div class="row">
+              <div class="col-md-6">
+                Total Tickets
+              </div>
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
+                  <h4>25000</h4>
+              </div>
+            </div>
+            <p><span class="item_price">100$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 gallery-grid gallery-grid1 wow flipInY animated" data-wow-delay=".7s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Pokemon Onesies</a></h5>
+            <p><span class="item_price">79$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 gallery-grid gallery-grid2 wow flipInY animated" data-wow-delay=".9s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Doctor Play Set</a></h5>
+            <p><span class="item_price">30$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row responsive">
+        <div class="col-md-4 col-xs-12 gallery-grid wow flipInY animated" data-wow-delay=".5s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Full Sleeves Romper</a></h5>
+            <p><span class="item_price">60$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 gallery-grid gallery-grid1 wow flipInY animated" data-wow-delay=".7s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Party Wear Frock</a></h5>
+            <p><span class="item_price">80$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 gallery-grid gallery-grid2 wow flipInY animated" data-wow-delay=".9s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Bear Diaper Bag</a></h5>
+            <p><span class="item_price">110$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row responsive">
+        <div class="col-md-4 gallery-grid wow flipInY animated" data-wow-delay=".5s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Full Sleeves Romper</a></h5>
+            <p><span class="item_price">60$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 gallery-grid gallery-grid1 wow flipInY animated" data-wow-delay=".7s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Party Wear Frock</a></h5>
+            <p><span class="item_price">80$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 gallery-grid gallery-grid2 wow flipInY animated" data-wow-delay=".9s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Bear Diaper Bag</a></h5>
+            <p><span class="item_price">110$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row responsive">
+        <div class="col-md-4 col-xs-12 gallery-grid wow flipInY animated" data-wow-delay=".5s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Full Sleeves Romper</a></h5>
+            <p><span class="item_price">60$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 gallery-grid gallery-grid1 wow flipInY animated" data-wow-delay=".7s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Party Wear Frock</a></h5>
+            <p><span class="item_price">80$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 gallery-grid gallery-grid2 wow flipInY animated" data-wow-delay=".9s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Bear Diaper Bag</a></h5>
+            <p><span class="item_price">110$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row responsive">
+        <div class="col-md-4 col-xs-12 gallery-grid wow flipInY animated" data-wow-delay=".5s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Full Sleeves Romper</a></h5>
+            <p><span class="item_price">60$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 gallery-grid gallery-grid1 wow flipInY animated" data-wow-delay=".7s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Party Wear Frock</a></h5>
+            <p><span class="item_price">80$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 gallery-grid gallery-grid2 wow flipInY animated" data-wow-delay=".9s">
+          <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
+          <div class="gallery-text simpleCart_shelfItem">
+            <h5><a class="name" href="single.html">Bear Diaper Bag</a></h5>
+            <p><span class="item_price">110$</span></p>
+            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+              <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+<!--//gallery-->

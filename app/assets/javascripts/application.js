@@ -21,4 +21,16 @@
 //= require jquery.parallax-1.1.3
 //= require modernizr-2.6.2.min
 //= require wow.min
+//= easing
+//= imagezoom
+//= jquery-1.11.1.min
+//= jquery-ui
+//= jquery.countdown.min
+//= jquery.flexslider
+//= jquery.jscrollpane.min
+//= jquery.mousewheel
+//= main
+//= modernizr.custom
+//= move-top
+//= uisearch
 //= require_tree .

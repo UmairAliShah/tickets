@@ -7,4 +7,7 @@ class HomesController < ApplicationController
   def search
 
   end
+
+  def products
+  end
 end

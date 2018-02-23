@@ -21,6 +21,12 @@ gem 'jquery-rails'
 gem 'devise'
 
 gem 'simple_token_authentication', '~> 1.0'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
+gem "figaro"
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
