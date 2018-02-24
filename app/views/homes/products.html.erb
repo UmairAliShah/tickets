@@ -37,7 +37,40 @@
   });
 </script>
 
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
 
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="demo"
+    document.getElementById("id_days").innerHTML = days ;
+
+		document.getElementById("id_hours").innerHTML =hours ;
+
+		document.getElementById("id_minutes").innerHTML = minutes ;
+
+		document.getElementById("id_secs").innerHTML = seconds;
+    // If the count down is over, write some text
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
 <!--gallery-->
 <div class="gallery">
   <div class="container">
@@ -51,18 +84,123 @@
           <a href="products.html"><%= image_tag("g1.jpg", class:"img-responsive") %></a>
           <div class="gallery-text simpleCart_shelfItem">
             <h5><a class="name" href="single.html">Baby Girls' Dress </a></h5>
+						<br>
             <div class="row">
-              <div class="col-md-6">
-                Total Tickets
-              </div>
-              <div class="col-md-3">
-              </div>
-              <div class="col-md-3">
-                  <h4>25000</h4>
-              </div>
-            </div>
-            <p><span class="item_price">100$</span></p>
-            <h4 class="sizes">Sizes: <a href="#"> s</a> - <a href="#">m</a> - <a href="#">l</a> - <a href="#">xl</a> </h4>
+							<div class="col-md-6 col-xs-12">
+								<label style="float:left;">Total Tickets</label>
+							</div>
+							<div class="col-md-6 col-xs-12">
+									<label style="float:right;">25000</label>
+							</div>
+							<div class="col-md-12 col-xs-12">
+								<%= progress_bar 0.45, alternative: 'info', active: true, style: "height:10px; margin-bottom:0px; margin-top:0.5em;"  %>
+							</div>
+							<div class="col-md-2 col-xs-12">
+								<label style="float:left;">10</label>
+							</div>
+							<div class="col-md-7 col-xs-12">
+							</div>
+							<div class="col-md-3 col-xs-12">
+								<label style="float:right;">24900</label>
+							</div>
+							<div class="col-md-6 col-xs-12">
+								<label style="float:left;">Tickets Sold</label>
+							</div>
+							<div class="col-md-6 col-xs-12">
+								<label style="float:right;">Tickets Remaining</label>
+							</div>
+							<div class="col-md-12 col-xs-12">
+								<label style="float:center;">Estimated to close on or before</label>
+							</div>
+
+							<div class="col-md-12 col-xs-12">
+								<br>
+								<div class="row">
+									<div class="col-md-2">
+										<label>DAYS</label>
+									</div>
+									<div class="col-md-1">
+									</div>
+									<div class="col-md-2">
+										<label>HOURS</label>
+									</div>
+									<div class="col-md-1">
+									</div>
+									<div class="col-md-2">
+										<label>MINS</label>
+									</div>
+									<div class="col-md-1">
+									</div>
+									<div class="col-md-2">
+										<label>SECS</label>
+									</div>
+									<div class="col-md-1">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-xs-12">
+								<div class="row">
+									<div class="col-md-2">
+										<div class="square" >
+                      <div id="id_days" style="margin-top:10px;">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-1">
+										<label style="margin-top:10px;">: </label>
+									</div>
+									<div class="col-md-2">
+										<div class="square">
+											<div id="id_hours" style="margin-top:10px;">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-1">
+										<label style="margin-top:10px;">: </label>
+									</div>
+									<div class="col-md-2">
+										<div class="square">
+											<div id="id_minutes" style="margin-top:10px;">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-1">
+										<label style="margin-top:10px;">: </label>
+									</div>
+									<div class="col-md-2">
+										<div class="square">
+											<div id="id_secs" style="margin-top:10px;">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-1">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-xs-12">
+								 <br>
+	               <div class="rectangle">
+									 <div class="row">
+										 <div class="col-md-2 col-xs-12">
+											 <label style="float:center"> ₦</label>
+										 </div>
+										 <div class="col-md-7 col-xs-12">
+											 <form>
+													 <div class="form-group">
+														 <input class="form-control  price_field" placeholder="Enter Amount" id="inputdefault" type="text">
+													</div>
+												</form>
+										 </div>
+										 <div class="col-md-3 col-xs-12">
+											 <button class="button button2">Blue</button>
+										 </div>
+									 </div>
+								 </div>
+							</div>
+						</div>
+
+
+
             <ul>
               <li><a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
               <li><a class="item_add" href="#"><span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>

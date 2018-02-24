@@ -17,14 +17,17 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '~> 5.0'
 
 gem 'jquery-rails'
-
+# Progress Bar gem
+gem 'bootstrap_progressbar'
+# Use Devise Gem For authentication
 gem 'devise'
-
 gem 'simple_token_authentication', '~> 1.0'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+
+
 
 gem "figaro"
 # Use Uglifier as compressor for JavaScript assets
