@@ -4,13 +4,12 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   config.omniauth :facebook, ENV['APP_ID'], ENV['APP_SECRET']
-  config.omniauth :google_oauth2,  ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_KEY'], {}
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '2e8f3742af7f490f4a0038906b1d78b61d7bdf65028091253c03e451d55ea0e63a6b46b0c7592ed8e3ebd35bc7eaeaba7b62665e8e28f3ec9c3fce31ebac9078'
+  # config.secret_key = '8fa7b0131a96d7455908f142101f8ead35f47bcc9dbdf5238613ec4d40f705c7831ba87cf5cb1f0848486dfae06b4554f3f8971114666bf36e4aa15b2d8c555a'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -20,7 +19,7 @@ Devise.setup do |config|
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
-
+  config.scoped_views = true
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
 
@@ -112,7 +111,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'b1e7b951d483eaadd8f8ce0344c1ac8c38bb2821198042ccb65d9d1d6d851602e67b6525411f7e3ea3f48af6424737fc77821c61d8d9786566bdb065fbfd09c6'
+  # config.pepper = 'c1af47336e75db6677d285fc67d7b5f18774dba33f5ba7aa391531637cd004b510ab1ecf3b07db6bfe03f9aae72e1917d5df11f61f15ac649eeeb688e318cc3d'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -227,7 +226,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-   config.scoped_views = true
+  # config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).

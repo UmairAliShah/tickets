@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
 
+
+  namespace :user do
+    resources :profiles
+    resources :addresses
+    resources :dashboard
+  end
+
   namespace :admin do
     resources :homes
   end
 
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
+  devise_for :users, path: 'users', controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
   devise_for :admins, path: 'new-app-auth-admins'
 
   resources :homes do
