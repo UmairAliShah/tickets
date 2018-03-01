@@ -27,11 +27,15 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
-
-
+gem "paperclip", "~> 5.2.1"
+gem "cocoon"
 gem "figaro"
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+
+#Use for nested form fields
+gem "cocoon"
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

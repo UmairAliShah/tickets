@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
 
+  resources :products
+
   namespace :user do
     resources :profiles
-    resources :addresses
     resources :dashboard
   end
 

@@ -1,0 +1,167 @@
+<% if controller.controller_name == "products" && controller.action_name == "new" %>
+  <% content_for :title, "Add Product | Traffle" %>
+<% elsif  controller.name == "products" && action.name == "edit" %>
+  <% content_for :title, "Edit Product | Traffle" %>
+<% end %>
+<div class="container" style="padding: 3em;">
+  <div class="row">
+    <div class="row login_signup_heading" style="padding:4em;margin:0px;">
+      <% if controller.controller_name == "products" && controller.action_name == "new" %>
+        <div class="col-md-12">
+          <center><h3 class="heading_text" style="font-size:25px;">Add Product</h3></center>
+        </div>
+      <% elsif  controller.name == "products" && action.name == "edit" %>
+        <div class="col-md-12">
+          <center><h3 class="heading_text" style="font-size:25px;">Edit Product</h3></center>
+        </div>
+      <% end %>
+    </div>
+    <div class="jumbotron" style="padding-top:2em;padding-bottom:2em; background-color: rgba(248, 114, 23, 0.8); border-radius:0 0 1em 1em;">
+     <div class="row login_signup_panel" style="padding-top: 1.5em;">
+       <div class="col-md-12 col-xs-12">
+         <%= form_with(model: product, local: true, html: { multipart: true }) do |form| %>
+          <% if product.errors.any? %>
+            <div class="form-group alert alert-error alert-block" id="error_explanation">
+              <button type="button" class="close" data-dismiss="alert">x</button>
+              <h5 class="heading_error"><%= pluralize(product.errors.count, "error") %>  prohibited this product from being saved:</h5>
+              <% product.errors.full_messages.each do |message| %>
+                <h6 class="heading_error"><%= msg%></h6>
+              <% end %>
+            </div>
+         <% end %>
+         <div class="row">
+           <%= form.fields_for :images do |a|%>
+             <div class="col-md-3 col-xs-12">
+               <center>
+                 <%= image_tag('1.jpg', id:"produc1",style:"width:100%;height:13em;;", class:"img-responsive img-thumbnail")%>
+                 <%= a.file_field :avatar,class: "btn btn-info btn-sm", style:"width:60%;"  %>
+               </center>
+             </div>
+           <% end %>
+
+           <div class="col-md-3 col-xs-12">
+             <%= image_tag('1.jpg', id:"produc2",style:"width:100%;height:13em;", class:"img-responsive img-thumbnail")%>
+           </div>
+           <div class="col-md-3 col-xs-12">
+             <%= image_tag('1.jpg', id:"produc3",style:"width:100%;height:13em;", class:"img-responsive img-thumbnail")%>
+           </div>
+           <div class="col-md-3 col-xs-12">
+             <%= image_tag('1.jpg', id:"produc4",style:"width:100%;height:13em;", class:"img-responsive img-thumbnail")%>
+           </div>
+         </div>
+       </div>
+
+       <div class="col-md-12 col-xs-12">
+         <div class="row">
+
+           <div class="col-md-3 col-xs-12">
+           </div>
+           <div class="col-md-3 col-xs-12">
+           </div>
+           <div class="col-md-3 col-xs-12">
+           </div>
+         </div>
+       </div>
+       <div class="col-md-12 col-xs-12">
+         <div class="row">
+           <div class="form-group col-md-3 col-xs-12">
+             <%= form.label :title, class: "login_signup_label" %>
+             <br>
+             <%= form.text_field :title, id: :product_title, autofocus: true, placeholder: 'Enter title',class: 'form-control my_text_field', required: true %>
+           </div>
+           <div class="form-group col-md-3 col-xs-12">
+             <%= form.label :total_tickets, class: "login_signup_label" %>
+             <br>
+             <%= form.number_field :total_tickets, id: :product_total_tickets, autofocus: true, placeholder: 'Enter total tickets',class: 'form-control my_text_field', required: true %>
+           </div>
+           <div class="form-group col-md-6 col-xs-12">
+             
+             <%= form.label :count_down, class: "my_label" %>
+             <br>
+             <%= form.datetime_select :count_down, id: :product_count_down %>
+           </div>
+         </div>
+       </div>
+       <div class="col-md-12 col-xs-12">
+         <div class="row">
+           <div class="form-group col-md-6 col-xs-12">
+             <%= form.label :short_description, class: "my_label" %>
+             <br>
+             <%= form.text_area :short_description, id: :product_short_description, autofocus: true, placeholder: 'Enter short description',class: 'form-control my_text_field', required: true, style: "padding-bottom:4em;" %>
+           </div>
+           <div class="form-group col-md-6 col-xs-12">
+             <%= form.label :long_description, class: "my_label" %>
+             <br>
+             <%= form.text_area :long_description, id: :product_long_description, autofocus: true, placeholder: 'Enter long description',class: 'form-control my_text_field', required: true, style: "padding-bottom:4em;" %>
+           </div>
+         </div>
+       </div>
+       <div id="features">
+         <%= form.fields_for :features do |a|%>
+           <%= render 'feature_fields', f:a %>
+         <%end%>
+         <div class='links col-md-12 col-xs-12'>
+           <br>
+           <%= link_to_add_association 'Add more feature', form, :features, partial: 'feature_fields', class:"btn btn-success" %>
+         </div>
+       </div>
+         <div class="col-md-12 col-xs-12">
+           <div class="row">
+             <div class="col-md-5">
+             </div>
+             <div class="form-group col-md-2 col-xs-12">
+               <%= form.submit "Save", class: 'btn btn-block btn-outline btn-success', style: "font-weight:bold;font-family: 'Merriweather', serif; " %>
+             </div>
+             <div class="col-md-5">
+             </div>
+           </div>
+         </div>
+       <%end%>
+     </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+      $('#features')
+        .on('cocoon:before-insert', function() {
+          $("#owner_from_list").hide();
+          $("#owner a.add_fields").hide();
+        })
+        .on('cocoon:after-insert', function() {
+          /* ... do something ... */
+        })
+        .on("cocoon:before-remove", function() {
+          $("#owner_from_list").show();
+          $("#owner a.add_fields").show();
+        })
+        .on("cocoon:after-remove", function() {
+          /* e.g. recalculate order of child items */
+        });
+
+      // example showing manipulating the inserted/removed item
+
+      $('#features')
+        .on('cocoon:before-insert', function(e,task_to_be_added) {
+          task_to_be_added.fadeIn('slow');
+        })
+        .on('cocoon:after-insert', function(e, added_task) {
+          // e.g. set the background of inserted task
+          added_task.css("background","red");
+        })
+        .on('cocoon:before-remove', function(e, task) {
+          // allow some time for the animation to complete
+          $(this).data('remove-timeout', 1000);
+          task.fadeOut('slow');
+        });
+
+        $('#container').on('cocoon:before-insert', function(event, insertedItem) {
+          var confirmation = confirm("Are you sure?");
+          if( confirmation === false ){
+            event.preventDefault();
+          }
+       });
+  });
+</script>

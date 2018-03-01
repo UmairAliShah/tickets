@@ -15,11 +15,13 @@
     color: #428bca;
 }
 .btn-success.btn-outline {
-    color: #5cb85c;
+    color: #fff;
+    background-color: #F88017;
 }
 .btn-primary.btn-outline:hover,
 .btn-success.btn-outline:hover,{
     color: #fff;
+    background-color: #F87217;
 }
 .signup{
    margin-top: 10px;
@@ -77,15 +79,23 @@
 }
 
 .login_signup_heading{
-  background: #0041C2;border-top-right-radius: 1em;border-top-left-radius: 1em;
+  background: #F88017;border-top-right-radius: 1em;border-top-left-radius: 1em;
 }
 .login_signup_panel{
-  border: 2px solid;border-radius: 1em;border-color: #0041C2;padding-left: 3em;padding-right: 3em;padding-top: 0px;padding-bottom: 1em;
+  border: 2px solid;border-radius: 1em;border-color: #F88017;padding-left: 3em;padding-right: 3em;padding-top: 0px;padding-bottom: 1em;
 }
 .login_signup_label{
   //color: #306EFF;
   color:#FFFFFF;font-weight:bold;font-family: 'Merriweather', serif;cursor: default;float: left;text-align: left;
   margin-top: 0.7em;font-size: 1em;
+}
+.my_label
+{
+  color:#FFFFFF;font-weight:bold;font-family: 'Merriweather', serif;cursor: default;float: left;text-align: left;
+font-size: 1em;
+}
+.my_label:hover{
+  cursor: pointer;
 }
 .login_signup_label:hover{
   cursor: pointer;
@@ -238,4 +248,7 @@
   padding: 20px;
   background: #fff;
   min-height: 460px;
+}
+.heading_error{
+  font-weight:bold;font-family: 'Merriweather', serif;
 }

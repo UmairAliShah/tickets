@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180226142557) do
+ActiveRecord::Schema.define(version: 20180228140035) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "country"
@@ -39,6 +39,45 @@ ActiveRecord::Schema.define(version: 20180226142557) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "features", force: :cascade do |t|
+    t.string "title"
+    t.string "content1"
+    t.string "content2"
+    t.string "content3"
+    t.string "content4"
+    t.string "content5"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_features_on_product_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.index ["product_id"], name: "index_images_on_product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.integer "total_tickets"
+    t.integer "sold_tickets", default: 0
+    t.text "short_description"
+    t.text "long_description"
+    t.boolean "approve", default: false
+    t.datetime "count_down"
+    t.string "imageable_type"
+    t.integer "imageable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_products_on_imageable_type_and_imageable_id"
   end
 
   create_table "profiles", force: :cascade do |t|

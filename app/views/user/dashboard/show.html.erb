@@ -10,7 +10,7 @@
           <div class="profile-usertitle">
             <div class="row">
               <div class="col-md-12 col-xs-12">
-               <center>  <%= image_tag("1.jpg", class: "img-responsive img-circle", style:"width:230px; height:230px;") %>
+               <center> <%= image_tag("1.jpg", class: "img-responsive img-circle", style:"width:230px; height:230px;") %>
                </center>
               </div>
 
@@ -44,24 +44,76 @@
           <div class="profile-usermenu">
             <ul class="nav">
               <li class="active">
-                <a href="#">
+                <a href="#"  style="font-size:15px;">
                 <i class="glyphicon glyphicon-dashboard"></i>
                 Dashboard </a>
               </li>
+              <li >
+                <a href="#"  style="font-size:15px;">
+                <i class="glyphicon glyphicon-record"></i>
+                My Products </a>
+              </li>
               <li>
-                <a href="#">
+                <%= link_to new_product_path, style:"font-size:15px;" do  %>
+                  <i class="glyphicon glyphicon-plus-sign"></i> Add Product
+                <% end %>
+              </li>
+              <li>
+                <a href="#"  style="font-size:15px;">
                 <i class="glyphicon glyphicon-user"></i>
                 My Profile </a>
               </li>
               <li>
-                <a href="#" target="_blank">
-                <i class="fa fa-money"></i>
+                <a href="#" target="_blank"  style="font-size:15px;">
+                <i class="glyphicon glyphicon-credit-card"></i>
                  My Wallet </a>
               </li>
               <li>
-                <a href="#">
+                <a href="#"  style="font-size:15px;">
+                <i class=" glyphicon glyphicon-transfer"></i>
+                 Wallet Credit Transfer </a>
+              </li>
+              <li>
+                <a href="#"  style="font-size:15px;">
+                <i class="glyphicon glyphicon-share"></i>
+                Rewards Points</a>
+              </li>
+              <li>
+                <a href="#"  style="font-size:15px;">
+                <i class="glyphicon glyphicon-eye-open"></i>
+                Watch List </a>
+              </li>
+              <li>
+                <a href="#"  style="font-size:15px;">
+                <i class="glyphicon glyphicon-gift"></i>
+                Prize Redemption</a>
+              </li>
+              <li>
+                <a href="#"  style="font-size:15px;">
+                <i class="glyphicon glyphicon-time"></i>
+                 Draw History</a>
+              </li>
+              <li>
+                <a href="#"  style="font-size:15px;">
+                <i class=" glyphicon glyphicon-folder-open"></i>
+                 Play History</a>
+              </li>
+              <li>
+                <a href="#"  style="font-size:15px;">
+                <i class="glyphicon glyphicon-bell"></i>
+                 Notifications</a>
+              </li>
+              <li>
+                <a href="#"  style="font-size:15px;">
                 <i class="glyphicon glyphicon-flag"></i>
                 Help </a>
+              </li>
+
+              <li>
+                <br>
+                <a href="#"  style="font-size:15px;">
+                <i class=" 	glyphicon glyphicon-log-out"></i>
+                LOGOUT </a>
               </li>
             </ul>
           </div>
@@ -73,8 +125,10 @@
           <div class="col-md-6 col-xs-12" style="background-color:#465840; height: 250px;">
 
           </div>
+          <div class="col-md-1">
 
-          <div class="col-md-6 col-xs-12" style="background-color:#998360;  height: 250px;">
+          </div>
+          <div class="col-md-5 col-xs-12" style="background-color:#998360;  height: 250px;">
 
           </div>
         </div>

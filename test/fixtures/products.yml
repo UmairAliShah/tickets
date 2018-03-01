@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  total_tickets: 1
+  sold_tickets: 1
+  short_description: MyText
+  long_description: MyText
+  approve: false
+  count_down: 2018-02-27 16:03:06
+  user: one
+  admin: one
+
+two:
+  title: MyString
+  total_tickets: 1
+  sold_tickets: 1
+  short_description: MyText
+  long_description: MyText
+  approve: false
+  count_down: 2018-02-27 16:03:06
+  user: two
+  admin: two

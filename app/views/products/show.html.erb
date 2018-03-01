@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <% @product.images.each do |p| %>
+    <strong>Image: </strong>
+    <%= image_tag(p.avatar.url(:medium), {style: "width:17em;height:17em;",class: "my_img img-responsive img-thumbnail img-circle",alt: "User Profile Image"}) %>
+
+  <% end %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @product.title %>
+</p>
+
+<p>
+  <strong>Total tickets:</strong>
+  <%= @product.total_tickets %>
+</p>
+
+<p>
+  <strong>Sold tickets:</strong>
+  <%= @product.sold_tickets %>
+</p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @product.short_description %>
+</p>
+
+<p>
+  <strong>Long description:</strong>
+  <%= @product.long_description %>
+</p>
+
+<p>
+  <strong>Approve:</strong>
+  <%= @product.approve %>
+</p>
+
+<p>
+  <strong>Count down:</strong>
+  <%= @product.count_down %>
+</p>
+
+<p>
+  <% @product.features.each do |f| %>
+    <strong>features:</strong>
+    <%= f.title %>
+    <% f.contents.each do |v| %>
+      <strong>Values:</strong>
+      <%= v.title %>
+    <% end %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

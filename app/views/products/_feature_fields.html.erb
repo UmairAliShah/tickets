@@ -1,0 +1,53 @@
+<div class="col-md-12 col-xs-12 nested-fields">
+  <div class="row">
+    <div class="form-group col-md-12 col-xs-12 ">
+      <%= f.label :title, "Product's Feature", class: "my_label" %>
+      <br>
+      <%= f.text_field :title, autofocus: true, placeholder: 'Enter feature',class: 'form-control my_text_field', required: true %>
+    </div>
+    <div class="form-group col-md-12 col-xs-12">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <%= f.label :content1, "Feature's Content#", class: "my_label" %>
+          <br>
+          <%= f.text_field :content1, autofocus: true, placeholder: "Enter feature's content",class: 'form-control my_text_field' %>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <%= f.label :content2, "Feature's Content#", class: "my_label" %>
+          <br>
+          <%= f.text_field :content2, autofocus: true, placeholder: "Enter feature's content",class: 'form-control my_text_field' %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-xs-12">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <%= f.label :content3, "Feature's Content#", class: "my_label" %>
+          <br>
+          <%= f.text_field :content3, autofocus: true, placeholder: "Enter feature's content",class: 'form-control my_text_field' %>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <%= f.label :content4, "Feature's Content#", class: "my_label" %>
+          <br>
+          <%= f.text_field :content4, autofocus: true, placeholder: "Enter feature's content",class: 'form-control my_text_field' %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-xs-12">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <%= f.label :content5, "Feature's Content#", class: "my_label" %>
+          <br>
+          <%= f.text_field :content5, autofocus: true, placeholder: "Enter feature's content",class: 'form-control my_text_field' %>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <br>
+          <%= link_to_remove_association "remove feature", f, class: "btn btn-success" %>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
