@@ -1,0 +1,211 @@
+<% content_for :title,  " Product Details | Traffle" %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 no-pad-xs">
+      <div class="row login_signup_heading" style="padding:3em;margin:0px;">
+        <div class="col-md-12">
+          <center><h3 class="heading_text" style="font-size:30px;">Product Details</h3></center>
+        </div>
+      </div>
+      <div class="jumbotron" style="padding-top:2em;padding-bottom:1em; background-color: rgba(248, 114, 23, 0.8); border-radius:0 0 1em 1em;">
+        <div class="row">
+          <div class="col-md-12 col-xs-12 login_signup_panel">
+            <center>
+              <div class="row">
+                <% @product_images.each do |img| %>
+                   <div class="col-md-3 col-xs-12">
+                     <%= image_tag(img.avatar, class:"img img-resposnive", style: "height: 100%; width: 100%;") %>
+                   </div>
+                <% end %>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-6 col-xs-12">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <label class= "login_signup_label" >Title</label>
+                    </div>
+                    <div class="col-md-7">
+                      <%= label :title, @product.title,class: "login_signup_label"  %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <label class= "login_signup_label" >Total Tickets</label>
+                    </div>
+                    <div class="col-md-7">
+                      <%= label :total_tickets, @product.total_tickets,class: "login_signup_label"  %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-xs-12">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <label class= "login_signup_label" >Tickets Sold</label>
+                    </div>
+                    <div class="col-md-7">
+                      <%= label :sold_tickets, @product.sold_tickets,class: "login_signup_label"  %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <label class= "login_signup_label" >Short Description</label>
+                    </div>
+                    <div class="col-md-10">
+                      <%= label :short_description, @product.short_description,class: "login_signup_label"  %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-xs-12">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <label class= "login_signup_label" >Long Description</label>
+                    </div>
+                    <div class="col-md-10">
+                      <%= label :long_description, @product.long_description,class: "login_signup_label"  %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-xs-12">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <label class= "login_signup_label" >Count Down</label>
+                    </div>
+                    <div class="col-md-7">
+                      <%= label :count_down, @product.count_down,class: "login_signup_label"  %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <label class= "login_signup_label" >Created At</label>
+                    </div>
+                    <div class="col-md-7">
+                      <%= label :created_at, @product.created_at,class: "login_signup_label"  %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-xs-12">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <label class= "login_signup_label" >Owner</label>
+                    </div>
+                    <div class="col-md-7">
+                      <%= label :imageable_type, @product.imageable_type,class: "login_signup_label"  %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                </div>
+              </div>
+              <div class="row">
+                <br>
+                <div class="col-md-6 col-xs-12">
+                     <h3>Product's Features</h3>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                </div>
+              </div>
+
+              <% @product_features.each do |feature| %>
+                <div class="row">
+                  <div class="col-md-12 col-xs-12">
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label class= "login_signup_label" >Feature's Title</label>
+                      </div>
+                      <div class="col-md-10">
+                        <%= label :title, feature.title,class: "login_signup_label"  %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-xs-12">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <label class= "login_signup_label" >Feature's Content#</label>
+                      </div>
+                      <div class="col-md-7">
+                        <%= label :content1, feature.content1,class: "login_signup_label"  %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xs-12">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <label class= "login_signup_label" >Feature's Content#</label>
+                      </div>
+                      <div class="col-md-7">
+                        <%= label :content2, feature.content2,class: "login_signup_label"  %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-xs-12">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <label class= "login_signup_label" >Feature's Content#</label>
+                      </div>
+                      <div class="col-md-7">
+                        <%= label :content3, feature.content3,class: "login_signup_label"  %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xs-12">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <label class= "login_signup_label" >Feature's Content#</label>
+                      </div>
+                      <div class="col-md-7">
+                        <%= label :content4, feature.content4,class: "login_signup_label"  %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <label class= "login_signup_label" >Feature's Content#</label>
+                  </div>
+                  <div class="col-md-7">
+                    <%= label :content5, feature.content5,class: "login_signup_label"  %>
+                  </div>
+                </div>
+                <br>
+              <% end %>
+              <% if @product.approve == false %>
+                <div class="row">
+                  <div class="col-md-5">
+                  </div>
+                  <div class="col-md-2 col-xs-12">
+                    <%= link_to("Approve", approve_product_product_path(@product.id), class:"btn btn-sm show_button")%>
+                  </div>
+                  <div class="col-md-5">
+                  </div>
+                </div>
+              <% end %>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

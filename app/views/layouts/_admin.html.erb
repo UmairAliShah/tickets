@@ -9,9 +9,10 @@
           </div>
           <div class="collapse navbar-collapse" id="mainNavCollapse">
             <ul class="nav navbar-nav" style="font-size:1em;font-weight:bold;font-family: 'Merriweather', serif;cursor: default;">
-              <li><a onclick="moveContact(this)" id="navBody">Dashboard</a></li>
-              <li><a onclick="moveContact(this)" id="navBody">Dashboard</a></li>
-              <li><a onclick="moveContact(this)" id="navBody">Dashboard</a></li>
+              <li><%= link_to("Dashboard",  root_path) %></li>
+              <li><%= link_to("Approved Products", approved_products_admin_homes_path)%></li>
+              <li><%= link_to("Unapproved Products", unapproved_products_admin_homes_path)%></li>
+              <li><%= link_to("Add Product", new_product_path) %></li>
               <li class="dropdown">
               </li>
               <% if admin_signed_in? %>

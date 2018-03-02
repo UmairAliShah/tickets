@@ -1,19 +1,21 @@
 <% content_for :title, "Dashboard | " %>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-    
+<div class="container">
+  <div class="jumbotron" style="padding-top:2em;padding-bottom:2em; border-radius:1em 1em 1em 1em;">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-3">
+            <h3>Total Registered Users: <%= @user %></h3>
+          </div>
+          <div class="col-md-3">
+            <h3>Total Products: <%= @products %></h3>
+          </div>
+          <div class="col-md-3">
+            <h3>Approved Products: <%= @approved_products %></h3>
+          </div>
+          <div class="col-md-3">
+            <h3>Unapproved Products: <%= @unapproved_products %></h3>
+          </div>
         </div>
       </div>
     </div>

@@ -82,7 +82,7 @@
   background: #F88017;border-top-right-radius: 1em;border-top-left-radius: 1em;
 }
 .login_signup_panel{
-  border: 2px solid;border-radius: 1em;border-color: #F88017;padding-left: 3em;padding-right: 3em;padding-top: 0px;padding-bottom: 1em;
+  border: 2px solid;border-radius: 1em;border-color: #F88017;padding-left: 3em;padding-right: 3em;padding-top: 1.5em;padding-bottom: 1em;
 }
 .login_signup_label{
   //color: #306EFF;
@@ -251,4 +251,24 @@ font-size: 1em;
 }
 .heading_error{
   font-weight:bold;font-family: 'Merriweather', serif;
+}
+.show_button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #008CBA;
+    color: white;
+    border: 2px solid white;
+}
+.show_button:hover {
+    background-color: white;
+    color: #008CBA;
 }

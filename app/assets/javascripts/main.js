@@ -1,4 +1,9 @@
 jQuery(document).ready(function($){
+	setTimeout(function(){
+		$("#notice_wrapper").slideToggle('slow', function(){
+			$(this).remove();
+		});
+	}, 6000);
 	//if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
 	var MqL = 1170;
 	//move nav element position according to window width
@@ -31,12 +36,12 @@ jQuery(document).ready(function($){
 		closeNav();
 	});
 
-	
-	
-	
 
 
-	
+
+
+
+
 
 	//submenu items - go back link
 	$('.go-back').on('click', function(){
@@ -57,7 +62,7 @@ jQuery(document).ready(function($){
 
 	function toggleSearch(type) {
 		if(type=="close") {
-			//close serach 
+			//close serach
 			$('.cd-search').removeClass('is-visible');
 			$('.cd-search-trigger').removeClass('search-is-visible');
 			$('.cd-overlay').removeClass('search-is-visible');
@@ -73,7 +78,7 @@ jQuery(document).ready(function($){
 
 	function checkWindowWidth() {
 		//check window width (scrollbar included)
-		var e = window, 
+		var e = window,
             a = 'inner';
         if (!('innerWidth' in window )) {
             a = 'client';

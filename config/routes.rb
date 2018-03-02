@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
 
-  resources :products
+  resources :products do
+    member do
+      get :approve_product
+    end
+  end
 
   namespace :user do
     resources :profiles
@@ -9,7 +13,12 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :homes
+    resources :homes do
+      collection do
+        get :approved_products
+        get :unapproved_products
+      end
+    end
   end
 
   devise_for :users, path: 'users', controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}

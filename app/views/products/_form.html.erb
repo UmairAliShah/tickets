@@ -1,6 +1,6 @@
 <% if controller.controller_name == "products" && controller.action_name == "new" %>
   <% content_for :title, "Add Product | Traffle" %>
-<% elsif  controller.name == "products" && action.name == "edit" %>
+<% elsif  controller.controller_name == "products" && controller.action_name == "edit" %>
   <% content_for :title, "Edit Product | Traffle" %>
 <% end %>
 <div class="container" style="padding: 3em;">
@@ -10,7 +10,7 @@
         <div class="col-md-12">
           <center><h3 class="heading_text" style="font-size:25px;">Add Product</h3></center>
         </div>
-      <% elsif  controller.name == "products" && action.name == "edit" %>
+      <% elsif  controller.controller_name == "products" && controller.action_name == "edit" %>
         <div class="col-md-12">
           <center><h3 class="heading_text" style="font-size:25px;">Edit Product</h3></center>
         </div>
@@ -75,7 +75,7 @@
              <%= form.number_field :total_tickets, id: :product_total_tickets, autofocus: true, placeholder: 'Enter total tickets',class: 'form-control my_text_field', required: true %>
            </div>
            <div class="form-group col-md-6 col-xs-12">
-             
+
              <%= form.label :count_down, class: "my_label" %>
              <br>
              <%= form.datetime_select :count_down, id: :product_count_down %>

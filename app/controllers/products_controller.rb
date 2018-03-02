@@ -1,5 +1,11 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!
+  before_action do
+    if current_user != nil
+      authenticate_user!
+    else
+      authenticate_admin!
+    end
+  end
 
   skip_before_action :authenticate_user_from_token!, :raise => false
   before_action :set_product, only: [:show, :edit, :update, :destroy]
@@ -36,6 +42,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    debugger
     @product = Product.new(product_params)
     if user_signed_in?
       @product.imageable_id = current_user.id
@@ -78,6 +85,22 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+
+
+  def approve_product
+    
+      @product = Product.find(params[:id])
+      if @product
+         @product.approve = true
+          if @product.save
+             flash[:notice] = "Successfully Approved!"
+          else
+             flash[:notice] = "Not Approved!"
+          end
+      end
+      redirect_to admin_homes_path
   end
 
   private
